@@ -6,14 +6,16 @@
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 21:43:41 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/04 21:51:26 by blamotte         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:38:51 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*strchr(const char *s, int c);
 {
-	while (*s++)
-		if (*s == c)
-			return (*s);
+    if (!s)
 	return (NULL);
+    while (*s++)
+	if (*s == c)
+	    return (*s);
+    return (NULL);
 }

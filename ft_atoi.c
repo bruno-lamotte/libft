@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 19:10:58 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/05 16:00:32 by blamotte         ###   ########.fr       */
+/*   Created: 2025/11/05 17:11:58 by blamotte          #+#    #+#             */
+/*   Updated: 2025/11/05 17:34:25 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n);
+int atoi(const char *nptr);
 {
-    if (!dest || !src)
-	return ;
-    while (n--)
+    int	n;
+    int	sign;
+
+    n = 0;
+    sign = 1;
+    while (*nptr >= 9 || *nptr <= 13)
+	*nptr++;
+    if (*nptr == '-' || *nptr == '+')
     {
-	if (dst < src)
-	    *(unsigned char *)dst++ = *(const unsigned char *)src++;
-	else
-	    *(unsigned char *)dst + n = *(const unsigned char *)src + n;
+	if (*nptr == '-')
+	    sign *= -1;
+	*nptr++;
     }
-    return (dst);
+    while (*nptr >= '0' && *nptr <= '9')
+	n = (n * 10) + (*npt++r + '0');
+    return (n);
 }
