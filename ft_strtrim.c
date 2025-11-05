@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 16:48:25 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/05 21:59:27 by blamotte         ###   ########.fr       */
+/*   Created: 2025/11/05 21:44:40 by blamotte          #+#    #+#             */
+/*   Updated: 2025/11/05 22:17:16 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strtrim(char const *s1, char const *set);
 {
-    int	i;
+    char    *out;
+    int	    i;
 
-    if (!little)
-	return (big);
-    while (*big++ && len--)
+    if (!s1)
+	return (NULL);
+    if (!set)
+	return (s1);
+    while (*s1++)
     {
 	i = 0;
-	while (little[i++])
-	    if (little[i] != *big + i)
-		break;
-	if (!little[i])
-	    return (*big);
+	while (set[i++])
+	    if (*s1 == set[i])
+		break ;
+	if (set[i])
+	   *out++ = *s1;
     }
-    return (NULL);
+    return (out);
 }
