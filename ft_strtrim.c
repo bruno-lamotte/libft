@@ -16,17 +16,17 @@ char	*ft_strtrim(char const *s1, char const *set);
     int	    i;
 
     if (!s1)
-	return (NULL);
+	    return (NULL);
     if (!set)
-	return (s1);
+	    return (s1);
     while (*s1++)
     {
-	i = 0;
-	while (set[i++])
-	    if (*s1 == set[i])
-		break ;
-	if (set[i])
-	   *out++ = *s1;
+	    i = 0;
+	    while (set[i++])
+	        if (*s1 == set[i])
+		        break ;
+	    if (set[i])
+	        *out++ = *s1;
     }
     return (out);
 }

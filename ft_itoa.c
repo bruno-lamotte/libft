@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 21:13:40 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/05 21:27:09 by blamotte         ###   ########.fr       */
+/*   Created: 2025/11/10 16:02:33 by blamotte          #+#    #+#             */
+/*   Updated: 2025/11/10 17:59:25 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strjoin(char const *s1, char const *s2);
-{
-    char    *dst;
+#include "libft.h"
+#include <stdlib.h>
 
-    if (!s1 || !s2)
+char	*ft_itoa(int n)
+{
+    long int	nb;
+    int		size;
+    size_t	len;
+    int		*out;
+
+    nb = n;
+    len = 2;
+    sign = 1;
+    if (nb < 0)
+    {
+	    sign *= -1;
+	    nb = -nb;
+	    out[0] = '-';
+	    len++;
+    }
+    while (nb / 10)
+	    len++;
+    if (!malloc(sizeof(char *)len))
 	    return (NULL);
-    if (!dst = malloc(sizeof(*dest) * (ft_strlen(s1) + ft_strlen(s2) + 1))
-	    return (NULL);
-    ft_memmove(dst, s1, ft_strlen(s1));
-    ft_memmove(dst + ft_strlen(s1), s2, ft_strlen(s2));
-    dst[ft_strlen(s1) + ft_strlen(s2) + 1] = '\0';
-    return (dst);
+    out[len--] = '\0';
+    while (nb / 10)
+	    out[len--] = nb % 10;
+    return (out);
 }

@@ -6,13 +6,15 @@
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:07:18 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/04 18:52:09 by blamotte         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:16:08 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha || ft_isdigit)
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }

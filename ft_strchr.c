@@ -13,7 +13,7 @@
 char	*strchr(const char *s, int c);
 {
     if (!s)
-	return (NULL);
+	    return (NULL);
     while (*s++)
 	if (*s == c)
 	    return (*s);

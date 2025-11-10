@@ -18,14 +18,14 @@ int atoi(const char *nptr);
     n = 0;
     sign = 1;
     while (*nptr >= 9 || *nptr <= 13)
-	*nptr++;
+	    *nptr++;
     if (*nptr == '-' || *nptr == '+')
     {
-	if (*nptr == '-')
+	    if (*nptr == '-')
 	    sign *= -1;
-	*nptr++;
+        *nptr++;
     }
     while (*nptr >= '0' && *nptr <= '9')
-	n = (n * 10) + (*npt++r + '0');
+	    n = (n * 10) + (*npt++r + '0');
     return (n);
 }

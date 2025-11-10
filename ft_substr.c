@@ -15,13 +15,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
     char    *dest;
 
     if (!s)
-	return (NULL);
+	    return (NULL);
     if (ft_strlen(s) < start)
-	len = 0;
+	    len = 0;
     if (ft_stlen(s + start) < len)
-	len = ft_strlen(s + start);
+	    len = ft_strlen(s + start);
     if (!dest(malloc(sizeof(*dest) * len + 1)))
-	return (NULL);
+	    return (NULL);
     ft_memmove(dest + start, s, len);
     dest[len + 1] = '\0';
     return (dest);

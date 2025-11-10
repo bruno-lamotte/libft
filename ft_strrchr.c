@@ -15,10 +15,10 @@ char	*strrchr(const char *s, int c);
     size_t  slen;
 
     if (!s)
-	return (NULL);
+	    return (NULL);
     slen = ft_strlen(s);
     while (slen--)
     	if (*s + slen == c)
-	   return (*s);
+	        return (*s);
     return (NULL);
 }

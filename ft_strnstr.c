@@ -15,15 +15,15 @@ char	*strnstr(const char *big, const char *little, size_t len)
     int	i;
 
     if (!little)
-	return (big);
+		return (big);
     while (*big++ && len--)
     {
-	i = 0;
-	while (little[i++])
-	    if (little[i] != *big + i)
-		break;
-	if (!little[i])
-	    return (*big);
+		i = 0;
+		while (little[i++])
+	    	if (little[i] != *big + i)
+				break;
+		if (!little[i])
+	    	return (*big);
     }
     return (NULL);
 }

@@ -18,9 +18,9 @@ char	*strdup(const char *s);
     char    *dest;
 
     if (!s)
-	return (NULL);
+	    return (NULL);
     if (!dest(malloc(sizeof(*dest) * ft_strlen(s) + 1)))
-	return (NULL);
+	    return (NULL);
     ft_memmove(dest, s, ft_strlen(s));
     dest[ft_strlen(s) + 1] = '\0';
     return (dest);
