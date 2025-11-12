@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n)
 {
 	if (!s)
 		return ;
-	ft_memset(s, n, 0);
+	ft_memset(s, 0, n);
 }

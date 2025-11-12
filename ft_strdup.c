@@ -13,16 +13,15 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*strdup(const char *s);
+char	*ft_strdup(const char *s)
 {
     char    *dest;
 
     if (!s)
 	    return (NULL);
-    if (!dest(malloc(sizeof(*dest) * ft_strlen(s) + 1)))
+    if (!(dest = calloc(ft_strlen(s) + 1, sizeof(char))))
 	    return (NULL);
     ft_memmove(dest, s, ft_strlen(s));
-    dest[ft_strlen(s) + 1] = '\0';
     return (dest);
 }
 

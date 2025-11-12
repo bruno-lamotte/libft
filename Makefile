@@ -24,7 +24,7 @@ ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 ft_atoi.c ft_strdup.c ft_calloc.c ft_substr.c \
 ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c
 
-SRC_BONUS = 
+SRC_BONUS = ft_lstsize.c
 
 OBJ_FILES     = $(SRC_FILES:.c=.o)
 OBJ_FILES_BONUS = $(SRC_BONUS:.c=.o)

@@ -9,7 +9,9 @@
 /*   Updated: 2025/11/04 18:06:44 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

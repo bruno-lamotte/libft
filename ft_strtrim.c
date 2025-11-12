@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strtrim(char const *s1, char const *set);
+#include "libft.h"
+#include <stdlib.h>
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
     char    *out;
     int	    i;
@@ -18,7 +21,8 @@ char	*ft_strtrim(char const *s1, char const *set);
     if (!s1)
 	    return (NULL);
     if (!set)
-	    return (s1);
+	    return ((char *)s1);
+    if (!(out = malloc(sizeof(char * ) * ft_strlen(s1))))
     while (*s1++)
     {
 	    i = 0;

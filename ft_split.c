@@ -29,33 +29,36 @@ int count_words(char *s, char c)
 		}
 		else if (*s == c)
 	    	flag = 0;
-		*s++;
+		s++;
     }
     return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-    char    **out;
-    int	    flag;
-    int	    i;
+	char	**out;
+	int		flag;
+	int		i;
+	int		j;
 
-    if (!s || !out = malloc(sizeof(char *) * count_words(s, c) + 1))
-		eturn (NULL);
-    flag = -1;
-    while (s[i])
-    {
-		if(s[i] != c && flag < 0)
-	    	flag = i;
-		else if ((s[i] || s[i] == c) && flag >= 0)
+	if (!s || !(out = malloc(sizeof(char *) * (count_words((char *)s, c) + 1))))
+		return (NULL);
+	flag = -1;
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] != c && flag < 0)
+			flag = i;
+		else if ((s[i] == c || s[i + 1] == '\0') && flag >= 0)
 		{
-	    	if (!*out++ = ft_substr(s, flag, i - flag))
-		    	while (out[i--])
-					free(out[i])
-	    	flag = -1;
+			if (!(out[j++] = ft_substr(s, flag, i - flag + (s[i + 1] == '\0' && s[i] != c))))
+				while (--j >= 0)
+					free(out[j]);
+			flag = -1;
 		}
 		i++;
-    }
-    *out++ = NULL;
-    return (out);
+	}
+	out[j] = NULL;
+	return (out);
 }
