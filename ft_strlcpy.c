@@ -14,10 +14,20 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (!dst || !src)
+	if (!src)
 		return (0);
-	ft_memcpy(dst, src, size - 1);
-	dst[size] = '\0';
+	if (size && dst)
+	{
+		if (ft_strlen(src) < size - 1)
+		{
+			ft_memcpy(dst, src, ft_strlen(src));
+			dst[ft_strlen(src)] = '\0';
+		}
+		else
+		{
+			ft_memcpy(dst, src, size - 1);
+			dst[size - 1] = '\0';
+		}
+	}
 	return (ft_strlen(src));
 }
-

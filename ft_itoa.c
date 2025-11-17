@@ -13,13 +13,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-#include "libft.h"
-
 char	*ft_itoa(int n)
 {
-	char		*out;
-	long		nb;
-	int			len;
+	char	*out;
+	long	nb;
+	int		len;
 
 	nb = n;
 	len = (n <= 0);
@@ -27,7 +25,7 @@ char	*ft_itoa(int n)
 		n /= 10;
 	out = ft_calloc(len + 1, sizeof(char));
 	if (!out)
-        return (NULL);
+		return (NULL);
 	if (nb < 0)
 	{
 		out[0] = '-';

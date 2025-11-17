@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
-    char    *dest;
+	char	*dest;
 
-    if (!s)
-	    return (NULL);
-    if (!(dest = calloc(ft_strlen(s) + 1, sizeof(char))))
-	    return (NULL);
-    ft_memmove(dest, s, ft_strlen(s));
-    return (dest);
+	if (!s)
+		return (NULL);
+	dest = calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!dest)
+		return (NULL);
+	ft_memmove(dest, s, ft_strlen(s));
+	return (dest);
 }
-

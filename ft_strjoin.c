@@ -10,19 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char    *dst;
+	char	*dst;
+	size_t	s1len;
+	size_t	s2len;
 
-    if (!s1 || !s2)
-	    return (NULL);
-    if (!(dst = malloc(sizeof(*dst) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-	    return (NULL);
-    ft_memmove(dst, s1, ft_strlen(s1));
-    ft_memmove(dst + ft_strlen(s1), s2, ft_strlen(s2));
-    dst[ft_strlen(s1) + ft_strlen(s2) + 1] = '\0';
-    return (dst);
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);
+	dst = malloc(sizeof(*dst) * (s1len + s2len + 1));
+	if (!dst)
+		return (NULL);
+	ft_memmove(dst, s1, s1len);
+	ft_memmove(dst + s1len, s2, s2len);
+	dst[s1len + s2len] = '\0';
+	return (dst);
 }

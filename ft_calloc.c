@@ -10,16 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-    void *ptr;
-    if (!nmemb || !size)
-	    return (malloc(0));
-    if (!(ptr = malloc(nmemb * size)))
-	    return (NULL);
-    ft_bzero(ptr, nmemb * size);
-    return (ptr);
+	void	*ptr;
+
+	if (!nmemb || !size)
+		return (malloc(0));
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
