@@ -23,10 +23,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	if ((size_t)ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
-	dest = malloc(sizeof(char) * len + 1);
+	dest = calloc(len + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
 	ft_memmove(dest, s + start, len);
-	dest[len] = '\0';
 	return (dest);
 }
