@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:37:50 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/05 21:12:01 by blamotte         ###   ########.fr       */
+/*   Created: 2025/11/18 01:33:41 by blamotte          #+#    #+#             */
+/*   Updated: 2025/11/18 01:33:55 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+t_list	*ft_lstnew(void *content)
 {
-	char	*dest;
+	t_list	*new;
 
-	dest = calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!dest)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	ft_memmove(dest, s, ft_strlen(s));
-	return (dest);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blamotte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:37:50 by blamotte          #+#    #+#             */
-/*   Updated: 2025/11/05 21:12:01 by blamotte         ###   ########.fr       */
+/*   Created: 2025/11/18 05:19:33 by blamotte          #+#    #+#             */
+/*   Updated: 2025/11/18 05:19:36 by blamotte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*dest;
+	t_list	*new_lst;
+	t_list	*new_node;
 
-	dest = calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!dest)
-		return (NULL);
-	ft_memmove(dest, s, ft_strlen(s));
-	return (dest);
+	new_lst = NULL;
+	while (lst)
+	{
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
+	}
+	return (new_lst);
 }
