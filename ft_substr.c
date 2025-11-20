@@ -20,10 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (ft_strlen(s) <= start)
-		return (dest = calloc(1, 1), dest);
+		return (dest = ft_calloc(1, 1), dest);
 	if ((size_t)ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
-	dest = calloc(len + 1, sizeof(char));
+	dest = ft_calloc(len + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
 	ft_memmove(dest, s + start, len);

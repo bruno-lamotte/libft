@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s2len = ft_strlen(s2);
 	if (!s1 || !s2)
 		return (NULL);
-	dst = calloc(s1len + s2len + 1, sizeof(*dst));
+	dst = ft_calloc(s1len + s2len + 1, sizeof(*dst));
 	if (!dst)
 		return (NULL);
 	ft_memmove(dst, s1, s1len);

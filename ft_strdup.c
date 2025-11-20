@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*dest;
 
-	dest = calloc(ft_strlen(s) + 1, sizeof(char));
+	dest = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
 	ft_memmove(dest, s, ft_strlen(s));

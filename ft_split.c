@@ -36,8 +36,8 @@ int	count_words(char *s, char c)
 
 char	**free_all(char **out, int j)
 {
-	while (out[j])
-		free(out[j--]);
+	while (j-- > 0)
+		free(out[j]);
 	free(out);
 	return (NULL);
 }
